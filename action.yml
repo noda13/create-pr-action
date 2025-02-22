@@ -6,7 +6,7 @@ description: |
 inputs:
   message:
     required: true
-    description: 'コミットメッセージ'
+    description: 'commit message'
 outputs:
   branch:
     value: ${{ steps.pr.outputs.branch }}
