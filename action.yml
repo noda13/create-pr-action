@@ -5,8 +5,8 @@ description: |
   パーミッションい「contents: write」と「pull_requests: write」が必要です。
 inputs:
   message:
-    description: 'コミットメッセージ'
     required: true
+    description: 'コミットメッセージ'
 outputs:
   branch:
     value: ${{ steps.pr.outputs.branch }}
@@ -19,10 +19,10 @@ runs:
       shell: bash
       env:
         USER_NAME: github-actions[bot]
-        EMAIL: github-actions[bot]@users.noreply.github.com
+        EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         MESSAGE: ${{ inputs.message }}
         BRANCH: auto/${{ github.run_id }}/${{ github.run_attempt }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
         echo "branch=${BRANCH}" >> "${GITHUB_OUTPUT}"
         git config --global user.name "${USER_NAME}"
