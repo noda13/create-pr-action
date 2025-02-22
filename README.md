@@ -9,4 +9,5 @@ touch action.yml
 ## 
 
 gh pr create --fill-first
-gh pr merge
+gh pr merge -m
+
